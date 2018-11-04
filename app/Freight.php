@@ -23,4 +23,12 @@ class Freight extends Model
     protected $hidden = [
         'created_at',
     ];
+
+    public function newDay(){
+        return rand (1,20);
+    }
+    
+    public function newPrice(){
+        return rand (0,1000)/10;
+    }
 }

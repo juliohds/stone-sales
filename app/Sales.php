@@ -12,7 +12,7 @@ class Sales extends Model
      * @var array
      */
     protected $fillable = [
-        'id', 'customer_id', 'products_id'
+        'id', 'customer_id', 'product_id'
     ];
 
     /**

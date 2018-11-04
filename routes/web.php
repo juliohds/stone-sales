@@ -1,5 +1,6 @@
 <?php
 
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -14,3 +15,11 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+
+//products
+$router->get('products',  ['uses' => 'ProductController@showAll']);
+$router->get('products/{id}',  ['uses' => 'ProductController@show']);
+$router->post('products',  ['uses' => 'ProductController@create']);
+$router->put('products/{id}',  ['uses' => 'ProductController@update']);
+$router->delete('products/{id}',  ['uses' => 'ProductController@destroy']);

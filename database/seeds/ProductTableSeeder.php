@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use App\Product;
 
-class ProdutosTableSeeder extends Seeder
+class ProductTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,8 +11,8 @@ class ProdutosTableSeeder extends Seeder
      * @return void
      */
     public function run()
-    {           
-        for ($i=0; $i < 10; $i++) { 
+    {
+        for ($i=1; $i <= 10; $i++) { 
             
             $Product = new Product;
             $Product->title = "Product ".$i."";
@@ -22,6 +22,7 @@ class ProdutosTableSeeder extends Seeder
             $Product->save();
         
         }
-        
     }
 }
+
+

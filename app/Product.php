@@ -12,7 +12,7 @@ class Product extends Model
      * @var array
      */
     protected $fillable = [
-        'id', 'title', 'description', 'picture', 'category'
+        'id', 'title', 'description', 'picture', 'category_id'
     ];
 
     /**
@@ -21,6 +21,11 @@ class Product extends Model
      * @var array
      */
     protected $hidden = [
-        'created_at',
+        'created_at','deleted_at'
     ];
+
+    public function productCategory()
+    {
+        return $this->hasOne('App\Category', 'id');
+    }
 }

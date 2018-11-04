@@ -21,6 +21,18 @@ class Sales extends Model
      * @var array
      */
     protected $hidden = [
-        'created_at',
+        'created_at','customer_id','product_id'
     ];
+
+    public function customer()
+    {
+        return $this->belongsTo('App\Customer', 'id');
+    }
+    
+    public function product()
+    {
+        return $this->belongsTo('App\Product', 'id');
+    }
+   
+
 }

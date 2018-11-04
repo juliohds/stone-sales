@@ -31,7 +31,7 @@ class SalesController extends Controller
     }
     
     public function showAll(){
-        $sales = Sales::all();
+        $sales = Sales::with(['customer','product'])->get();
         return response()->json($sales);
     }
 }

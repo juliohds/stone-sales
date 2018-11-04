@@ -23,4 +23,5 @@ class Category extends Model
     protected $hidden = [
         'created_at',
     ];
+
 }

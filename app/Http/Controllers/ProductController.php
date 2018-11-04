@@ -13,7 +13,7 @@ class ProductController extends Controller
      * @return void
      */
     public function show($id){
-        $product = Product::find($id);
+        $product = Product::with('productCategory')->find($id);
         return response()->json($product);
     }
 

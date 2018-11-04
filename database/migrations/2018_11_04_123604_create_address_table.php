@@ -14,6 +14,7 @@ class CreateAddressTable extends Migration
     public function up()
     {
         Schema::create('addresses', function (Blueprint $table) {
+
             $table->increments('id');
             $table->string('street');
             $table->string('number');
@@ -23,7 +24,8 @@ class CreateAddressTable extends Migration
             $table->string('state');
             $table->string('country');
             $table->string('zip_code');
-            $table->integer('customer_id');
+            $table->integer('customer_id')->unsigned();
+            $table->foreign('customer_id')->references('id')->on('customers');
             $table->timestamps();
         });
     }

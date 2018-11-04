@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Customer;
+use App\Address;
 use Illuminate\Http\Request;
 
 
@@ -19,8 +20,14 @@ class CustomerController extends Controller
 
     public function create(Request $request){
         $customer = new Customer();
-        $customer->fill($request->all());
+        $customer->fill($request->input('customer'));
         $customer->save();
+
+        $address = new Address();
+        $address->fill($request->input('address'));
+        $address->customer_id = $customer->id;
+        $address->save();
+
         return response()->json($customer);
     }
 

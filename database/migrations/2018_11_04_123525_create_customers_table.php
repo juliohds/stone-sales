@@ -17,7 +17,7 @@ class CreateCustomersTable extends Migration
             
             $table->increments('id');
             $table->string('name');
-            $table->string('age')->nullable();
+            $table->integer('age')->nullable();
             $table->string('rg');
             $table->string('cpf');
             $table->string('cell_phone');
